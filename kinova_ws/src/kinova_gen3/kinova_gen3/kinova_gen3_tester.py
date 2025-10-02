@@ -242,7 +242,7 @@ def main():
     # 6. move above dropoff
     do_set_tool(node, set_tool, stack_x, stack_y, 0.15, -180, 0, 0)
     # 7. move down to dropoff
-    do_set_tool(node, set_tool, stack_x, stack_y, 0.25, -180, 0, 0)
+    do_set_tool(node, set_tool, stack_x, stack_y, 0.025, -180, 0, 0)
     # 8. open gripper
     do_set_gripper(node, set_gripper, 0.0)
     for i in range(10):
@@ -274,7 +274,7 @@ def main():
     # 6. move above dropoff
     do_set_tool(node, set_tool, stack_x, stack_y, 0.15, -180, 0, 0)
     # 7. move down to dropoff
-    do_set_tool(node, set_tool, stack_x, stack_y, 0.04, -180, 0, 0)
+    do_set_tool(node, set_tool, stack_x, stack_y, 0.045, -180, 0, 0)
     # 8. open gripper
     do_set_gripper(node, set_gripper, 0.0)
     for i in range(10):
