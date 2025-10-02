@@ -140,8 +140,12 @@ def main():
     # do_set_tool(node, set_tool, 0.05, -0.10, 0.9, -0.18, -0.18, 90)
     # do_get_tool(node, get_tool)
     
-    do_home(node, home)
+    
     do_set_gripper(node, set_gripper, 0.0)
+    for i in range(10):
+        print(do_get_gripper(node, get_gripper))
+        time.sleep(0.2)
+    do_home(node, home)
 
     # for i in range(3):
     pickup_x, pickup_y = 0.25, 0.0
@@ -154,17 +158,25 @@ def main():
 
     # 1. open gripper
     do_set_gripper(node, set_gripper, 0.0)
+    for i in range(10):
+        print(do_get_gripper(node, get_gripper))
+        time.sleep(0.2)
 
     # 2. move above pickup
-    do_set_tool(node, set_tool, pickup_x, pickup_y, 0.00, -180, 5, 0)
+    do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
 
     # 3. lower to pickup
-    #do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
+    do_set_tool(node, set_tool, pickup_x, pickup_y, 0.00, -180, 0, 0)
 
     # 4. close gripper
     do_set_gripper(node, set_gripper, 1.0)
+    for i in range(10):
+        print(do_get_gripper(node, get_gripper))
+        time.sleep(0.2)
     
-    do_set_tool(node, set_tool, stack_x, stack_y, 0.00, -180, 5, 0)
+    # 5. move up
+    do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
+
 
 if __name__ == '__main__':
     main()
