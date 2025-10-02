@@ -150,10 +150,9 @@ def main():
     for i in range(3):
         pickup_x, pickup_y = 0.25, 0.0
         stack_x, stack_y = 0.30, 0.10
-        block_height = 0.05
-        stack_base_z = 0.05
+        block_height = 0.02
 
-        target_z = stack_base_z + i * block_height
+        target_z = i * block_height
         # ================ STAGE 1: GRAB ================
         # 1. open gripper
         do_set_gripper(node, set_gripper, 0.0)
@@ -163,7 +162,7 @@ def main():
         # 2. move above pickup
         do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
         # 3. lower to pickup
-        do_set_tool(node, set_tool, pickup_x, pickup_y, 0.00, -180, 0, 0)
+        do_set_tool(node, set_tool, pickup_x, pickup_y, block_height*3 - target_z, -180, 0, 0)
         # 4. close gripper
         do_set_gripper(node, set_gripper, 1.0)
         for i in range(10):
