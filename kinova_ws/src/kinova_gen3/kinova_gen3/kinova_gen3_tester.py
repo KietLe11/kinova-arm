@@ -98,49 +98,59 @@ def main():
         node.get_logger().info('Waiting for home')
 
     do_home(node, home)
-    do_set_gripper(node, set_gripper, 1.0)
-    for i in range(10):
-        print(do_get_gripper(node, get_gripper))
-        time.sleep(0.2)
-    do_set_gripper(node, set_gripper, 0.0)
-    for i in range(10):
-        print(do_get_gripper(node, get_gripper))
-        time.sleep(0.2)
-    do_set_joints(node, set_joints, [0, 0, 0, 0, 0, 0])
-    do_set_joints(node, set_joints, [154, 0, 0, 0, 0, 0])
-    do_set_joints(node, set_joints, [-154, 0, 0, 0, 0, 0])
-    do_set_joints(node, set_joints, [0, 0, 0, 0, 0, 0])
-    do_set_joints(node, set_joints, [0, 45, 0, 0, 0, 0])
-    do_set_joints(node, set_joints, [0, -45, 0, 0, 0, 0])
-    do_set_joints(node, set_joints, [0, 0, 0, 0, 0, 0])
-    do_set_joints(node, set_joints, [0, 0, 45, 0, 0, 0])
-    do_set_joints(node, set_joints, [0, 0, -45, 0, 0, 0])
-    do_set_joints(node, set_joints, [0, 0, 0, 0, 0, 0])
-    do_set_joints(node, set_joints, [0, 0, 0, 0, 45, 0])
-    do_set_joints(node, set_joints, [0, 0, 0, 0, -45, 0])
-    do_set_joints(node, set_joints, [0, 0, 0, 0, 0, 0])
-    do_set_joints(node, set_joints, [0, 0, 0, 0, 0, 45])
-    do_set_joints(node, set_joints, [0, 0, 0, 0, 0, -45])
-    do_set_joints(node, set_joints, [45, -45, 0, 0, 0, 0])
-    input("Press return to grab block")
-    do_set_gripper(node, set_gripper, 1.0)
-    for i in range(10):
-        print(do_get_gripper(node, get_gripper))
-        time.sleep(0.2)
+    # do_set_gripper(node, set_gripper, 1.0)
+    # for i in range(10):
+    #     print(do_get_gripper(node, get_gripper))
+    #     time.sleep(0.2)
+    # do_set_gripper(node, set_gripper, 0.0)
+    # for i in range(10):
+    #     print(do_get_gripper(node, get_gripper))
+    #     time.sleep(0.2)
+    # do_set_joints(node, set_joints, [0, 0, 0, 0, 0, 0])
+    # do_set_joints(node, set_joints, [154, 0, 0, 0, 0, 0])
+    # do_set_joints(node, set_joints, [-154, 0, 0, 0, 0, 0])
+    # do_set_joints(node, set_joints, [0, 0, 0, 0, 0, 0])
+    # do_set_joints(node, set_joints, [0, 45, 0, 0, 0, 0])
+    # do_set_joints(node, set_joints, [0, -45, 0, 0, 0, 0])
+    # do_set_joints(node, set_joints, [0, 0, 0, 0, 0, 0])
+    # do_set_joints(node, set_joints, [0, 0, 45, 0, 0, 0])
+    # do_set_joints(node, set_joints, [0, 0, -45, 0, 0, 0])
+    # do_set_joints(node, set_joints, [0, 0, 0, 0, 0, 0])
+    # do_set_joints(node, set_joints, [0, 0, 0, 0, 45, 0])
+    # do_set_joints(node, set_joints, [0, 0, 0, 0, -45, 0])
+    # do_set_joints(node, set_joints, [0, 0, 0, 0, 0, 0])
+    # do_set_joints(node, set_joints, [0, 0, 0, 0, 0, 45])
+    # do_set_joints(node, set_joints, [0, 0, 0, 0, 0, -45])
+    # do_set_joints(node, set_joints, [45, -45, 0, 0, 0, 0])
+    # input("Press return to grab block")
+    # do_set_gripper(node, set_gripper, 1.0)
+    # for i in range(10):
+    #     print(do_get_gripper(node, get_gripper))
+    #     time.sleep(0.2)
 
-    do_get_joints(node, get_joints)
-    do_home(node, home)
-    do_set_gripper(node, set_gripper, 0.0)
-    for i in range(10):
-        print(do_get_gripper(node, get_gripper))
-        time.sleep(0.2)
+    # do_get_joints(node, get_joints)
+    # do_home(node, home)
+    # do_set_gripper(node, set_gripper, 0.0)
+    # for i in range(10):
+    #     print(do_get_gripper(node, get_gripper))
+    #     time.sleep(0.2)
 
-    do_set_joints(node, set_joints, [0, 0, 0, 0, 0, 1])
-    do_get_tool(node, get_tool)
-    do_set_tool(node, set_tool, 0.05, -0.10, 1.0, -0.18, -0.18, 90)
-    do_set_tool(node, set_tool, 0.05, -0.10, 0.9, -0.18, -0.18, 90)
-    do_get_tool(node, get_tool)
+    # do_set_joints(node, set_joints, [0, 0, 0, 0, 0, 1])
+    # do_get_tool(node, get_tool)
+    # do_set_tool(node, set_tool, 0.05, -0.10, 1.0, -0.18, -0.18, 90)
+    # do_set_tool(node, set_tool, 0.05, -0.10, 0.9, -0.18, -0.18, 90)
+    # do_get_tool(node, get_tool)
 
+    for i in range(3):
+        pickup_x, pickup_y = 0.20, 0.0
+        stack_x, stack_y = 0.30, 0.10
+        block_height = 0.05
+        stack_base_z = 0.05
+
+        target_z = stack_base_z + i * block_height
+
+        # 1. open gripper
+        do_set_gripper(node, set_gripper, 0.0)
 
 if __name__ == '__main__':
     main()
