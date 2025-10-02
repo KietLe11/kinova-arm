@@ -144,26 +144,27 @@ def main():
     do_set_gripper(node, set_gripper, 0.0)
 
     # for i in range(3):
-        pickup_x, pickup_y = 0.25, 0.0
-        stack_x, stack_y = 0.30, 0.10
-        block_height = 0.05
-        stack_base_z = 0.05
+    pickup_x, pickup_y = 0.25, 0.0
+    stack_x, stack_y = 0.30, 0.10
+    block_height = 0.05
+    stack_base_z = 0.05
 
-        target_z = stack_base_z + i * block_height
+    i = 0
+    target_z = stack_base_z + i * block_height
 
-        # 1. open gripper
-        do_set_gripper(node, set_gripper, 0.0)
+    # 1. open gripper
+    do_set_gripper(node, set_gripper, 0.0)
 
-        # 2. move above pickup
-        do_set_tool(node, set_tool, pickup_x, pickup_y, 0.00, -180, 5, 0)
+    # 2. move above pickup
+    do_set_tool(node, set_tool, pickup_x, pickup_y, 0.00, -180, 5, 0)
 
-        # 3. lower to pickup
-        #do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
+    # 3. lower to pickup
+    #do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
 
-        # 4. close gripper
-        do_set_gripper(node, set_gripper, 1.0)
-        
-        do_set_tool(node, set_tool, stack_x, stack_y, 0.00, -180, 5, 0)
+    # 4. close gripper
+    do_set_gripper(node, set_gripper, 1.0)
+    
+    do_set_tool(node, set_tool, stack_x, stack_y, 0.00, -180, 5, 0)
 
 if __name__ == '__main__':
     main()
