@@ -97,7 +97,6 @@ def main():
     while not home.wait_for_service(timeout_sec=1.0):
         node.get_logger().info('Waiting for home')
 
-    do_home(node, home)
     # do_set_gripper(node, set_gripper, 1.0)
     # for i in range(10):
     #     print(do_get_gripper(node, get_gripper))
@@ -140,9 +139,12 @@ def main():
     # do_set_tool(node, set_tool, 0.05, -0.10, 1.0, -0.18, -0.18, 90)
     # do_set_tool(node, set_tool, 0.05, -0.10, 0.9, -0.18, -0.18, 90)
     # do_get_tool(node, get_tool)
+    
+    do_home(node, home)
+    do_set_gripper(node, set_gripper, 0.0)
 
-    for i in range(3):
-        pickup_x, pickup_y = 0.20, 0.0
+    # for i in range(3):
+        pickup_x, pickup_y = 0.25, 0.0
         stack_x, stack_y = 0.30, 0.10
         block_height = 0.05
         stack_base_z = 0.05
@@ -153,13 +155,15 @@ def main():
         do_set_gripper(node, set_gripper, 0.0)
 
         # 2. move above pickup
-        do_set_tool(node, set_tool, pickup_x, pickup_y, 0.15, -180, 0, 0)
+        do_set_tool(node, set_tool, pickup_x, pickup_y, 0.00, -180, 5, 0)
 
         # 3. lower to pickup
-        do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
+        #do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
 
         # 4. close gripper
         do_set_gripper(node, set_gripper, 1.0)
+        
+        do_set_tool(node, set_tool, stack_x, stack_y, 0.00, -180, 5, 0)
 
 if __name__ == '__main__':
     main()

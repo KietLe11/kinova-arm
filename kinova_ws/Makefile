@@ -37,3 +37,4 @@ source:
 clean:
 	rm -rf build install log
 	@echo "Workspace cleaned (build, install, and log directories removed)."
+
