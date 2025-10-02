@@ -152,6 +152,15 @@ def main():
         # 1. open gripper
         do_set_gripper(node, set_gripper, 0.0)
 
+        # 2. move above pickup
+        do_set_tool(node, set_tool, pickup_x, pickup_y, 0.15, -180, 0, 0)
+
+        # 3. lower to pickup
+        do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
+
+        # 4. close gripper
+        do_set_gripper(node, set_gripper, 1.0)
+
 if __name__ == '__main__':
     main()
 
