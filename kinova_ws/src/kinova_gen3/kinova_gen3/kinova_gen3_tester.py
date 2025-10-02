@@ -147,42 +147,139 @@ def main():
         time.sleep(0.2)
     do_home(node, home)
 
-    for i in range(3):
-        pickup_x, pickup_y = 0.25, 0.0
-        stack_x, stack_y = 0.30, 0.10
-        block_height = 0.02
+    # for i in range(3):
+    #     pickup_x, pickup_y = 0.25, 0.0
+    #     stack_x, stack_y = 0.30, 0.10
+    #     block_height = 0.015
 
-        target_z = i * block_height
-        # ================ STAGE 1: GRAB ================
-        # 1. open gripper
-        do_set_gripper(node, set_gripper, 0.0)
-        for i in range(10):
-            print(do_get_gripper(node, get_gripper))
-            time.sleep(0.2)
-        # 2. move above pickup
-        do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
-        # 3. lower to pickup
-        do_set_tool(node, set_tool, pickup_x, pickup_y, block_height*3 - target_z, -180, 0, 0)
-        # 4. close gripper
-        do_set_gripper(node, set_gripper, 1.0)
-        for i in range(10):
-            print(do_get_gripper(node, get_gripper))
-            time.sleep(0.2)
-        # 5. move up
-        do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
+    #     target_z = i * block_height
+    #     # ================ STAGE 1: GRAB ================
+    #     # 1. open gripper
+    #     do_set_gripper(node, set_gripper, 0.0)
+    #     for i in range(10):
+    #         print(do_get_gripper(node, get_gripper))
+    #         time.sleep(0.2)
+    #     # 2. move above pickup
+    #     do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
+    #     # 3. lower to pickup
+    #     do_set_tool(node, set_tool, pickup_x, pickup_y, block_height*3 - target_z, -180, 0, 0)
+    #     # 4. close gripper
+    #     do_set_gripper(node, set_gripper, 1.0)
+    #     for i in range(10):
+    #         print(do_get_gripper(node, get_gripper))
+    #         time.sleep(0.2)
+    #     # 5. move up
+    #     do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
 
 
-        # ================ STAGE 2: DROPOFF ================
-        # 6. move above dropoff
-        do_set_tool(node, set_tool, stack_x, stack_y, 0.15, -180, 0, 0)
-        # 7. move down to dropoff
-        do_set_tool(node, set_tool, stack_x, stack_y, target_z, -180, 0, 0)
-        # 8. open gripper
-        do_set_gripper(node, set_gripper, 0.0)
-        for i in range(10):
-            print(do_get_gripper(node, get_gripper))
-            time.sleep(0.2)
+    #     # ================ STAGE 2: DROPOFF ================
+    #     # 6. move above dropoff
+    #     do_set_tool(node, set_tool, stack_x, stack_y, 0.15, -180, 0, 0)
+    #     # 7. move down to dropoff
+    #     do_set_tool(node, set_tool, stack_x, stack_y, target_z, -180, 0, 0)
+    #     # 8. open gripper
+    #     do_set_gripper(node, set_gripper, 0.0)
+    #     for i in range(10):
+    #         print(do_get_gripper(node, get_gripper))
+    #         time.sleep(0.2)
+
+    pickup_x, pickup_y = 0.25, 0.0
+    stack_x, stack_y = 0.30, 0.10
+    block_height = 0.015
+
+    # ================ STAGE 1: GRAB ================
+    # 1. open gripper
+    do_set_gripper(node, set_gripper, 0.0)
+    for i in range(10):
+        print(do_get_gripper(node, get_gripper))
+        time.sleep(0.2)
+    # 2. move above pickup
+    do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
+    # 3. lower to pickup
+    do_set_tool(node, set_tool, pickup_x, pickup_y, 0.040, -180, 0, 0)
+    # 4. close gripper
+    do_set_gripper(node, set_gripper, 1.0)
+    for i in range(10):
+        print(do_get_gripper(node, get_gripper))
+        time.sleep(0.2)
+    # 5. move up
+    do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
+
+
+    # ================ STAGE 2: DROPOFF ================
+    # 6. move above dropoff
+    do_set_tool(node, set_tool, stack_x, stack_y, 0.15, -180, 0, 0)
+    # 7. move down to dropoff
+    do_set_tool(node, set_tool, stack_x, stack_y, 0.0, -180, 0, 0)
+    # 8. open gripper
+    do_set_gripper(node, set_gripper, 0.0)
+    for i in range(10):
+        print(do_get_gripper(node, get_gripper))
+        time.sleep(0.2)
+
+
+
+    # ================ STAGE 1: GRAB ================
+    # 1. open gripper
+    do_set_gripper(node, set_gripper, 0.0)
+    for i in range(10):
+        print(do_get_gripper(node, get_gripper))
+        time.sleep(0.2)
+    # 2. move above pickup
+    do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
+    # 3. lower to pickup
+    do_set_tool(node, set_tool, pickup_x, pickup_y, 0.025, -180, 0, 0)
+    # 4. close gripper
+    do_set_gripper(node, set_gripper, 1.0)
+    for i in range(10):
+        print(do_get_gripper(node, get_gripper))
+        time.sleep(0.2)
+    # 5. move up
+    do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
+
+
+    # ================ STAGE 2: DROPOFF ================
+    # 6. move above dropoff
+    do_set_tool(node, set_tool, stack_x, stack_y, 0.15, -180, 0, 0)
+    # 7. move down to dropoff
+    do_set_tool(node, set_tool, stack_x, stack_y, 0.25, -180, 0, 0)
+    # 8. open gripper
+    do_set_gripper(node, set_gripper, 0.0)
+    for i in range(10):
+        print(do_get_gripper(node, get_gripper))
+        time.sleep(0.2)
     
+
+
+        # ================ STAGE 1: GRAB ================
+    # 1. open gripper
+    do_set_gripper(node, set_gripper, 0.0)
+    for i in range(10):
+        print(do_get_gripper(node, get_gripper))
+        time.sleep(0.2)
+    # 2. move above pickup
+    do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
+    # 3. lower to pickup
+    do_set_tool(node, set_tool, pickup_x, pickup_y, 0.0, -180, 0, 0)
+    # 4. close gripper
+    do_set_gripper(node, set_gripper, 1.0)
+    for i in range(10):
+        print(do_get_gripper(node, get_gripper))
+        time.sleep(0.2)
+    # 5. move up
+    do_set_tool(node, set_tool, pickup_x, pickup_y, 0.05, -180, 0, 0)
+
+
+    # ================ STAGE 2: DROPOFF ================
+    # 6. move above dropoff
+    do_set_tool(node, set_tool, stack_x, stack_y, 0.15, -180, 0, 0)
+    # 7. move down to dropoff
+    do_set_tool(node, set_tool, stack_x, stack_y, 0.04, -180, 0, 0)
+    # 8. open gripper
+    do_set_gripper(node, set_gripper, 0.0)
+    for i in range(10):
+        print(do_get_gripper(node, get_gripper))
+        time.sleep(0.2)
 
 if __name__ == '__main__':
     main()
